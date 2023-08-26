@@ -1,0 +1,13 @@
+footer img {
+  width: 100px;
+}
+
+footer {
+  display: flex;
+  padding: 20px;
+  background-color: #b9e7e7;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 1rem;
+  margin-top: 200px;
+}

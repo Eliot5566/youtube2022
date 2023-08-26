@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Product Gift Box</title>
+  </head>
+  <body>
+    <div id="app">
+      <div class="step" id="step1">
+        <h2>Choose Gift Box Size</h2>
+        <img
+          src="./image.png"
+          alt="Small Gift Box"
+          onclick="nextStep(1, '4')"
+        />
+        <img
+          src="./image (1).png"
+          alt="Medium Gift Box"
+          onclick="nextStep(1, '6')"
+        />
+        <img
+          src="./image (2).png"
+          alt="Large Gift Box"
+          onclick="nextStep(1, '9')"
+        />
+      </div>
+      <div class="step" id="step2" style="display: none">
+        <h2>Select Products</h2>
+        <img
+          src="./紅豆水饅頭1入.jpg"
+          alt="Product A"
+          onclick="addProduct('Product A')"
+        />
+        <img
+          src="/經典原味1入.jpg"
+          alt="Product B"
+          onclick="addProduct('Product B')"
+        />
+        <p>Selected Products: <span id="selectedProducts"></span></p>
+        <button onclick="nextStep(2)">Next</button>
+      </div>
+      <div class="step" id="step3" style="display: none">
+        <h2>Confirmation</h2>
+        <p>Gift Box Size: <span id="giftBoxSize"></span></p>
+        <p>
+          Selected Products: <span id="confirmationSelectedProducts"></span>
+        </p>
+        <p>Total Price: $<span id="totalPrice"></span></p>
+      </div>
+    </div>
+
+    <script>
+      let selectedSize = '';
+      let selectedProducts = [];
+
+      function nextStep(step, size = '') {
+        if (step === 1) {
+          selectedSize = size;
+          document.getElementById('step1').style.display = 'none';
+          document.getElementById('step2').style.display = 'block';
+        } else if (step === 2) {
+          document.getElementById('step2').style.display = 'none';
+          document.getElementById('step3').style.display = 'block';
+
+          // Update confirmation details
+          document.getElementById('giftBoxSize').textContent = selectedSize;
+          document.getElementById('confirmationSelectedProducts').textContent =
+            selectedProducts.join(', ');
+
+          // Calculate and display total price
+          const totalPrice = selectedProducts.length * 10; // Replace with your actual pricing logic
+          document.getElementById('totalPrice').textContent = totalPrice;
+        }
+      }
+
+      function addProduct(productName) {
+        if (selectedProducts.length < parseInt(selectedSize)) {
+          selectedProducts.push(productName);
+          document.getElementById('selectedProducts').textContent =
+            selectedProducts.join(', ');
+        } else {
+          alert(
+            `You can only add ${selectedSize} products for the selected gift box size.`
+          );
+        }
+      }
+    </script>
+  </body>
+</html>

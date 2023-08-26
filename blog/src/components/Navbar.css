@@ -1,0 +1,82 @@
+/* navbar */
+
+.navbar {
+  display: flex;
+  justify-content: center;
+}
+
+.container {
+  width: 1024px;
+}
+
+.navbar .container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 0;
+
+  justify-content: space-between;
+}
+
+.link {
+  text-decoration: none;
+  color: inherit;
+}
+
+.links {
+  display: flex;
+  gap: 10px;
+  margin: 0;
+  padding: 0;
+  align-items: center;
+  cursor: pointer;
+}
+.logo img {
+  width: 100px;
+}
+
+h6 {
+  font-size: 16px;
+  font-weight: 300;
+}
+
+.links .span {
+  cursor: pointer;
+}
+
+.links .write {
+  background-color: lightblue;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 300;
+  text-decoration: none;
+  color: inherit;
+}
+.links .write Link {
+  text-decoration: none;
+  color: inherit;
+}
+
+.write :hover {
+  color: teal;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  border: 1px solid teal;
+  text-decoration: none;
+  color: inherit;
+}
+
+.wr {
+  text-decoration: none; /* 去除下划线 */
+  color: inherit; /* 继承父元素的文本颜色 */
+  font-size: 16px;
+}
